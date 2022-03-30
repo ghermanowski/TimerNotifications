@@ -8,26 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
+	@EnvironmentObject private var notificationManager: NotificationManager
+	
     var body: some View {
 		NavigationView {
-			ScrollView {
-				LazyVStack(alignment: .leading, spacing: .zero, pinnedViews: .sectionHeaders) {
-					Section {
-						TimeSelection()
-							.padding(.bottom, 32)
-					} header: {
-						Header("Remind me at a time")
+			if notificationManager.hasRequestedPermission {
+				ScrollView {
+					LazyVStack(alignment: .leading, spacing: .zero, pinnedViews: .sectionHeaders) {
+						Section {
+							TimeSelection()
+								.padding(.bottom, 32)
+						} header: {
+							Header("Remind me at a time")
+						}
+						
+						Section {
+							TimePresets()
+						} header: {
+							Header("Remind me in")
+						}
 					}
-					
-					Section {
-						TimePresets()
-					} header: {
-						Header("Remind me in")
+					.padding(.horizontal)
+				}
+				.navigationTitle("Reminders")
+			} else {
+				Button("Request Notification Permission") {
+					Task {
+						await notificationManager.requestPermission()
 					}
 				}
+				.buttonStyle(.big)
 				.padding(.horizontal)
 			}
-			.navigationTitle("Reminders")
 		}
 		.background(Color(uiColor: .systemGroupedBackground))
 	}

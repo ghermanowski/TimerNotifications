@@ -12,6 +12,7 @@ struct TimerNotificationsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+				.environmentObject(NotificationManager.shared)
         }
     }
 }
