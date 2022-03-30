@@ -18,6 +18,9 @@ import SwiftUI
 	
 	@AppStorage("hasRequestedPermission") private(set) var hasRequestedPermission = false
 	
+	@Published var title = ""
+	@Published var content = ""
+	
 	func canSendNotfications() async -> Bool {
 		let settings = await notificationCentre.notificationSettings()
 		return settings.authorizationStatus == .authorized

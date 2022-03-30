@@ -17,6 +17,7 @@
 		F54F87D327F45C3E00BAA13B /* TimePresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D227F45C3E00BAA13B /* TimePresets.swift */; };
 		F54F87D527F45D3200BAA13B /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D427F45D3200BAA13B /* Header.swift */; };
 		F54F87D727F461BA00BAA13B /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D627F461BA00BAA13B /* NotificationManager.swift */; };
+		F54F87DA27F46E7A00BAA13B /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D927F46E7A00BAA13B /* InputField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F54F87D427F45D3200BAA13B /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		F54F87D627F461BA00BAA13B /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		F54F87D827F4657800BAA13B /* TimerNotifications--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TimerNotifications--iOS--Info.plist"; sourceTree = "<group>"; };
+		F54F87D927F46E7A00BAA13B /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				F54F87C827F456E500BAA13B /* TimerNotificationsApp.swift */,
 				F54F87C627F456E500BAA13B /* ContentView.swift */,
 				F54F87D227F45C3E00BAA13B /* TimePresets.swift */,
+				F54F87D927F46E7A00BAA13B /* InputField.swift */,
 				F54F87D427F45D3200BAA13B /* Header.swift */,
 				F54F87C527F456E500BAA13B /* BigStyle.swift */,
 				F54F87D027F45B2D00BAA13B /* CompactStyle.swift */,
@@ -152,6 +155,7 @@
 				F54F87D527F45D3200BAA13B /* Header.swift in Sources */,
 				F54F87CC27F456E500BAA13B /* ContentView.swift in Sources */,
 				F54F87D127F45B2D00BAA13B /* CompactStyle.swift in Sources */,
+				F54F87DA27F46E7A00BAA13B /* InputField.swift in Sources */,
 				F54F87D727F461BA00BAA13B /* NotificationManager.swift in Sources */,
 				F54F87CF27F456E500BAA13B /* TimeSelection.swift in Sources */,
 				F54F87CD27F456E500BAA13B /* TimeInterval.swift in Sources */,
