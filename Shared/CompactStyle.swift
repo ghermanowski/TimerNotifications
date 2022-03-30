@@ -10,7 +10,7 @@ import SwiftUI
 struct CompactStyle: ButtonStyle {
 	func makeBody(configuration: Configuration) -> some View {
 		configuration.label
-			.font(.title3.weight(.semibold))
+			.font(.headline)
 			.foregroundColor(.black)
 			.padding(.vertical, 6)
 			.padding(.horizontal, 10)
