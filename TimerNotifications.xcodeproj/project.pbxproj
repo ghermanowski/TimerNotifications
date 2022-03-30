@@ -7,16 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F54F87BA27F44EC600BAA13B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87B727F44EC600BAA13B /* ContentView.swift */; };
-		F54F87BB27F44EC600BAA13B /* TimerNotificationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87B827F44EC600BAA13B /* TimerNotificationsApp.swift */; };
-		F54F87BC27F44EC600BAA13B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54F87B927F44EC600BAA13B /* Assets.xcassets */; };
+		F54F87CA27F456E500BAA13B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54F87C427F456E500BAA13B /* Assets.xcassets */; };
+		F54F87CB27F456E500BAA13B /* BigStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87C527F456E500BAA13B /* BigStyle.swift */; };
+		F54F87CC27F456E500BAA13B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87C627F456E500BAA13B /* ContentView.swift */; };
+		F54F87CD27F456E500BAA13B /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87C727F456E500BAA13B /* TimeInterval.swift */; };
+		F54F87CE27F456E500BAA13B /* TimerNotificationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87C827F456E500BAA13B /* TimerNotificationsApp.swift */; };
+		F54F87CF27F456E500BAA13B /* TimeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87C927F456E500BAA13B /* TimeSelection.swift */; };
+		F54F87D127F45B2D00BAA13B /* CompactStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D027F45B2D00BAA13B /* CompactStyle.swift */; };
+		F54F87D327F45C3E00BAA13B /* TimePresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D227F45C3E00BAA13B /* TimePresets.swift */; };
+		F54F87D527F45D3200BAA13B /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D427F45D3200BAA13B /* Header.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F54F879327F44BC100BAA13B /* TimerNotifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerNotifications.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F54F87B727F44EC600BAA13B /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F54F87B827F44EC600BAA13B /* TimerNotificationsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerNotificationsApp.swift; sourceTree = "<group>"; };
-		F54F87B927F44EC600BAA13B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F54F87C427F456E500BAA13B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F54F87C527F456E500BAA13B /* BigStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStyle.swift; sourceTree = "<group>"; };
+		F54F87C627F456E500BAA13B /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F54F87C727F456E500BAA13B /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
+		F54F87C827F456E500BAA13B /* TimerNotificationsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerNotificationsApp.swift; sourceTree = "<group>"; };
+		F54F87C927F456E500BAA13B /* TimeSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelection.swift; sourceTree = "<group>"; };
+		F54F87D027F45B2D00BAA13B /* CompactStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactStyle.swift; sourceTree = "<group>"; };
+		F54F87D227F45C3E00BAA13B /* TimePresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePresets.swift; sourceTree = "<group>"; };
+		F54F87D427F45D3200BAA13B /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +45,7 @@
 		F54F878627F44BC000BAA13B = {
 			isa = PBXGroup;
 			children = (
-				F54F87AA27F44DEB00BAA13B /* Shared */,
+				F54F87C327F456AE00BAA13B /* Shared */,
 				F54F879427F44BC100BAA13B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,15 +58,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F54F87AA27F44DEB00BAA13B /* Shared */ = {
+		F54F87C327F456AE00BAA13B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				F54F87B827F44EC600BAA13B /* TimerNotificationsApp.swift */,
-				F54F87B727F44EC600BAA13B /* ContentView.swift */,
-				F54F87B927F44EC600BAA13B /* Assets.xcassets */,
+				F54F87C827F456E500BAA13B /* TimerNotificationsApp.swift */,
+				F54F87C627F456E500BAA13B /* ContentView.swift */,
+				F54F87D227F45C3E00BAA13B /* TimePresets.swift */,
+				F54F87D427F45D3200BAA13B /* Header.swift */,
+				F54F87C527F456E500BAA13B /* BigStyle.swift */,
+				F54F87D027F45B2D00BAA13B /* CompactStyle.swift */,
+				F54F87C927F456E500BAA13B /* TimeSelection.swift */,
+				F54F87C727F456E500BAA13B /* TimeInterval.swift */,
+				F54F87C427F456E500BAA13B /* Assets.xcassets */,
 			);
-			name = Shared;
-			path = ../../../Shared;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,7 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F54F87BC27F44EC600BAA13B /* Assets.xcassets in Resources */,
+				F54F87CA27F456E500BAA13B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,8 +144,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F54F87BB27F44EC600BAA13B /* TimerNotificationsApp.swift in Sources */,
-				F54F87BA27F44EC600BAA13B /* ContentView.swift in Sources */,
+				F54F87D527F45D3200BAA13B /* Header.swift in Sources */,
+				F54F87CC27F456E500BAA13B /* ContentView.swift in Sources */,
+				F54F87D127F45B2D00BAA13B /* CompactStyle.swift in Sources */,
+				F54F87CF27F456E500BAA13B /* TimeSelection.swift in Sources */,
+				F54F87CD27F456E500BAA13B /* TimeInterval.swift in Sources */,
+				F54F87CE27F456E500BAA13B /* TimerNotificationsApp.swift in Sources */,
+				F54F87CB27F456E500BAA13B /* BigStyle.swift in Sources */,
+				F54F87D327F45C3E00BAA13B /* TimePresets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

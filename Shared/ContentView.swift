@@ -9,9 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
+		ScrollView {
+			LazyVStack(alignment: .leading, spacing: .zero, pinnedViews: .sectionHeaders) {
+				Section {
+					TimeSelection()
+						.padding(.bottom, 32)
+				} header: {
+					Header("Remind me at a time")
+				}
+				
+				Section {
+					TimePresets()
+				} header: {
+					Header("Remind me in")
+				}
+			}
+		}
+		.background(Color(uiColor: .systemGroupedBackground))
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
