@@ -16,6 +16,7 @@
 		F54F87D127F45B2D00BAA13B /* CompactStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D027F45B2D00BAA13B /* CompactStyle.swift */; };
 		F54F87D327F45C3E00BAA13B /* TimePresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D227F45C3E00BAA13B /* TimePresets.swift */; };
 		F54F87D527F45D3200BAA13B /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D427F45D3200BAA13B /* Header.swift */; };
+		F54F87D727F461BA00BAA13B /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D627F461BA00BAA13B /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		F54F87D027F45B2D00BAA13B /* CompactStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactStyle.swift; sourceTree = "<group>"; };
 		F54F87D227F45C3E00BAA13B /* TimePresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePresets.swift; sourceTree = "<group>"; };
 		F54F87D427F45D3200BAA13B /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		F54F87D627F461BA00BAA13B /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		F54F87D827F4657800BAA13B /* TimerNotifications--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TimerNotifications--iOS--Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				F54F87C327F456AE00BAA13B /* Shared */,
+				F54F87D827F4657800BAA13B /* TimerNotifications--iOS--Info.plist */,
 				F54F879427F44BC100BAA13B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +73,7 @@
 				F54F87D027F45B2D00BAA13B /* CompactStyle.swift */,
 				F54F87C927F456E500BAA13B /* TimeSelection.swift */,
 				F54F87C727F456E500BAA13B /* TimeInterval.swift */,
+				F54F87D627F461BA00BAA13B /* NotificationManager.swift */,
 				F54F87C427F456E500BAA13B /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -147,6 +152,7 @@
 				F54F87D527F45D3200BAA13B /* Header.swift in Sources */,
 				F54F87CC27F456E500BAA13B /* ContentView.swift in Sources */,
 				F54F87D127F45B2D00BAA13B /* CompactStyle.swift in Sources */,
+				F54F87D727F461BA00BAA13B /* NotificationManager.swift in Sources */,
 				F54F87CF27F456E500BAA13B /* TimeSelection.swift in Sources */,
 				F54F87CD27F456E500BAA13B /* TimeInterval.swift in Sources */,
 				F54F87CE27F456E500BAA13B /* TimerNotificationsApp.swift in Sources */,
@@ -278,6 +284,7 @@
 				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TimerNotifications--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -309,6 +316,7 @@
 				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TimerNotifications--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
