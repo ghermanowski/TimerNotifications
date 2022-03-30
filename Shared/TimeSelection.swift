@@ -12,7 +12,7 @@ struct TimeSelection: View {
 	
     var body: some View {
 		DatePicker(selection: $date, displayedComponents: .hourAndMinute) {
-			Button("Remind me at") {
+			Button("Set Reminder") {
 				
 			}
 			.buttonStyle(.compact)
