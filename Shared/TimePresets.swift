@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct TimePresets: View {
-	let intervals: [TimeInterval] = [5, 60, 180, 300, 420, 600, 900, 1500, 1800, 2700, 3600, 5400]
+	@EnvironmentObject private var notificationManager: NotificationManager
+	
+	private let intervals: [TimeInterval] = [5, 15, 60, 180, 300, 420, 600, 900, 1800, 2700, 3600, 5400]
 	
 	var body: some View {
 		LazyVGrid(columns: Array(repeating: GridItem(), count: 3)) {
 			ForEach(intervals, id: \.self) { interval in
 				if let abbreviatedInterval = interval.abbreviated {
 					Button(abbreviatedInterval) {
-						
+						notificationManager.sendNotification(in: interval)
 					}
 					.buttonStyle(.big)
 				}

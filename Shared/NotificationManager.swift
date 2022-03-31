@@ -36,4 +36,23 @@ import SwiftUI
 		
 		hasRequestedPermission = true
 	}
+	
+	func sendNotification(in timeInterval: TimeInterval) {
+		let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+		let content = createNotification()
+		let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+		notificationCentre.add(request)
+	}
+	
+	private func createNotification() -> UNMutableNotificationContent {
+		let content = UNMutableNotificationContent()
+		content.title = title
+		content.subtitle = subtitle
+		content.body = body
+		content.sound = UNNotificationSound.default
+		title = ""
+		subtitle = ""
+		body = ""
+		return content
+	}
 }
