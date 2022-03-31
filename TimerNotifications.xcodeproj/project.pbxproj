@@ -18,6 +18,8 @@
 		F54F87D527F45D3200BAA13B /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D427F45D3200BAA13B /* Header.swift */; };
 		F54F87D727F461BA00BAA13B /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D627F461BA00BAA13B /* NotificationManager.swift */; };
 		F54F87DA27F46E7A00BAA13B /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D927F46E7A00BAA13B /* InputField.swift */; };
+		F5B6E4DE27F5DE7900D624BE /* PendingNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6E4DD27F5DE7800D624BE /* PendingNotifications.swift */; };
+		F5B6E4E027F5F1EF00D624BE /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6E4DF27F5F1EF00D624BE /* NotificationItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		F54F87D627F461BA00BAA13B /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		F54F87D827F4657800BAA13B /* TimerNotifications--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TimerNotifications--iOS--Info.plist"; sourceTree = "<group>"; };
 		F54F87D927F46E7A00BAA13B /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		F5B6E4DD27F5DE7800D624BE /* PendingNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingNotifications.swift; sourceTree = "<group>"; };
+		F5B6E4DF27F5F1EF00D624BE /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 				F54F87D427F45D3200BAA13B /* Header.swift */,
 				F54F87C527F456E500BAA13B /* BigStyle.swift */,
 				F54F87D027F45B2D00BAA13B /* CompactStyle.swift */,
+				F5B6E4DD27F5DE7800D624BE /* PendingNotifications.swift */,
+				F5B6E4DF27F5F1EF00D624BE /* NotificationItem.swift */,
 				F54F87C927F456E500BAA13B /* TimeSelection.swift */,
 				F54F87C727F456E500BAA13B /* TimeInterval.swift */,
 				F54F87D627F461BA00BAA13B /* NotificationManager.swift */,
@@ -162,6 +168,8 @@
 				F54F87CE27F456E500BAA13B /* TimerNotificationsApp.swift in Sources */,
 				F54F87CB27F456E500BAA13B /* BigStyle.swift in Sources */,
 				F54F87D327F45C3E00BAA13B /* TimePresets.swift in Sources */,
+				F5B6E4DE27F5DE7900D624BE /* PendingNotifications.swift in Sources */,
+				F5B6E4E027F5F1EF00D624BE /* NotificationItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,6 +22,8 @@ import SwiftUI
 	@Published var subtitle = ""
 	@Published var body = ""
 	
+	@Published var pendingNotifications: [UNNotificationRequest]?
+	
 	func canSendNotfications() async -> Bool {
 		let settings = await notificationCentre.notificationSettings()
 		return settings.authorizationStatus == .authorized
@@ -57,6 +59,8 @@ import SwiftUI
 		} catch {
 			print(error)
 		}
+		
+		await fetchPendingNotifications()
 	}
 	
 	private func createNotification() -> UNMutableNotificationContent {
@@ -64,10 +68,15 @@ import SwiftUI
 		content.title = title
 		content.subtitle = subtitle
 		content.body = body
-		content.sound = UNNotificationSound.default
+		content.sound = .default
 		title = ""
 		subtitle = ""
 		body = ""
 		return content
+	}
+	
+	func fetchPendingNotifications() async {
+		let notificationCenter = UNUserNotificationCenter.current()
+		pendingNotifications = await notificationCenter.pendingNotificationRequests()
 	}
 }

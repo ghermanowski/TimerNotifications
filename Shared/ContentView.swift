@@ -47,12 +47,19 @@ struct ContentView: View {
 							} header: {
 								Header("Remind me in")
 							}
+						} else if let pendingNotifications = notificationManager.pendingNotifications,
+								  !pendingNotifications.isEmpty {
+							PendingNotifications(pendingNotifications)
 						}
+						
 					}
 					.padding(.horizontal)
 				}
-				.navigationTitle("Reminders")
+				.navigationTitle("Notifications")
 				.animation(.default, value: notificationManager.title.isEmpty)
+				.task {
+					await notificationManager.fetchPendingNotifications()
+				}
 			} else {
 				Button("Request Notification Permission") {
 					Task {
@@ -64,6 +71,7 @@ struct ContentView: View {
 			}
 		}
 		.background(Color(uiColor: .systemGroupedBackground))
+		.navigationViewStyle(.stack)
 	}
 }
 
