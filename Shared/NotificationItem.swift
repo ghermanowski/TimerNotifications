@@ -19,6 +19,7 @@ struct NotificationItem: View {
     var body: some View {
 		HStack(alignment: .firstTextBaseline) {
 			Image(systemName: "star.fill")
+				.foregroundStyle(.tint)
 			
 			VStack(alignment: .leading, spacing: 6) {
 				Text(notification.content.title)
@@ -37,9 +38,6 @@ struct NotificationItem: View {
 			
 			Spacer()
 		}
-		.padding()
-		.background(Color(uiColor: .tertiarySystemFill))
-		.clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
 		.overlay(alignment: .topTrailing) {
 			Group {
 				if let timeTrigger = notification.trigger as? UNCalendarNotificationTrigger,
@@ -50,8 +48,11 @@ struct NotificationItem: View {
 					Text("in \(date, style: .timer)")
 				}
 			}
-			.padding()
+			.foregroundStyle(.tint)
 		}
+		.padding()
+		.background(Color(uiColor: .secondarySystemGroupedBackground))
+		.clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
 		.contextMenu {
 			Button(role: .destructive) {
 				Task {

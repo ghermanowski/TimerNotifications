@@ -71,6 +71,7 @@ struct ContentView: View {
 					}
 				}
 				.navigationTitle("Notifications")
+				.background(Color(uiColor: .systemGroupedBackground))
 				.animation(.default, value: notificationManager.content.title.isEmpty)
 				.animation(.default, value: focusedField)
 				.task {

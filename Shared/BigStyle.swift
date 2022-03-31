@@ -11,7 +11,7 @@ struct BigStyle: ButtonStyle {
 	func makeBody(configuration: Configuration) -> some View {
 		configuration.label
 			.font(.title3.weight(.semibold))
-			.foregroundColor(.black)
+			.foregroundColor(Color(uiColor: .systemBackground))
 			.padding(.vertical)
 			.frame(maxWidth: .infinity)
 			.background(Color.accentColor)
