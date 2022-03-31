@@ -2,7 +2,7 @@
 //  Header.swift
 //  TimerNotifications (iOS)
 //
-//  Created by Gregor Hermanowski on 30. March.
+//  Created by Gregor Hermanowski on 30. March 2022.
 //
 
 import SwiftUI
