@@ -15,7 +15,9 @@ struct ContentView: View {
 			InputField("Title", selection: $notificationManager.title)
 			
 			if !notificationManager.title.isEmpty {
-				InputField("Content", selection: $notificationManager.content)
+				InputField("Subtitle", selection: $notificationManager.subtitle)
+				
+				InputField("Body", selection: $notificationManager.body)
 			}
 		}
 		.padding(8)
@@ -31,18 +33,20 @@ struct ContentView: View {
 						inputFields
 							.padding(.bottom, 32)
 						
-						Section {
-							TimeSelection()
-								.padding(.bottom, 32)
-						} header: {
-							Header("Remind me at a time")
-						}
-						
-						Section {
-							TimePresets()
-								.padding(.bottom, 32)
-						} header: {
-							Header("Remind me in")
+						if !notificationManager.title.isEmpty {
+							Section {
+								TimeSelection()
+									.padding(.bottom, 32)
+							} header: {
+								Header("Remind me at a time")
+							}
+							
+							Section {
+								TimePresets()
+									.padding(.bottom, 32)
+							} header: {
+								Header("Remind me in")
+							}
 						}
 					}
 					.padding(.horizontal)
