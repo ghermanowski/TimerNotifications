@@ -12,17 +12,23 @@ import SwiftUI
 @MainActor final class NotificationManager: ObservableObject {
 	static let shared = NotificationManager()
 	
-	private init() { }
+	static func createContent() -> UNMutableNotificationContent {
+		let content = UNMutableNotificationContent()
+		content.sound = .default
+		return content
+	}
 	
-	let notificationCentre = UNUserNotificationCenter.current()
+	private init() {
+		content = Self.createContent()
+	}
+	
+	private let notificationCentre = UNUserNotificationCenter.current()
 	
 	@AppStorage("hasRequestedPermission") private(set) var hasRequestedPermission = false
 	
-	@Published var title = ""
-	@Published var subtitle = ""
-	@Published var body = ""
+	@Published var content: UNMutableNotificationContent
 	
-	@Published var pendingNotifications: [UNNotificationRequest]?
+	@Published private(set) var pendingNotifications: [UNNotificationRequest]?
 	
 	func canSendNotfications() async -> Bool {
 		let settings = await notificationCentre.notificationSettings()
@@ -41,38 +47,26 @@ import SwiftUI
 	
 	func sendNotification(in timeInterval: TimeInterval) async {
 		let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
-		await scheduleNotification(content: createNotification(), trigger: trigger)
+		await scheduleNotification(trigger: trigger)
 	}
 	
 	func sendNotification(at date: Date) async {
 		let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
 		let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-		await scheduleNotification(content: createNotification(), trigger: trigger)
+		await scheduleNotification(trigger: trigger)
 	}
 	
-	private func scheduleNotification(content: UNMutableNotificationContent,
-									  trigger: UNNotificationTrigger) async {
+	private func scheduleNotification(trigger: UNNotificationTrigger) async {
 		let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
 		
 		do {
 			try await notificationCentre.add(request)
+			self.content = Self.createContent()
 		} catch {
 			print(error)
 		}
 		
 		await fetchPendingNotifications()
-	}
-	
-	private func createNotification() -> UNMutableNotificationContent {
-		let content = UNMutableNotificationContent()
-		content.title = title
-		content.subtitle = subtitle
-		content.body = body
-		content.sound = .default
-		title = ""
-		subtitle = ""
-		body = ""
-		return content
 	}
 	
 	func fetchPendingNotifications() async {

@@ -10,20 +10,27 @@ import SwiftUI
 struct ContentView: View {
 	@EnvironmentObject private var notificationManager: NotificationManager
 	
+	@FocusState private var focusedField: AnyKeyPath?
+	
 	var inputFields: some View {
 		VStack {
-			InputField("Title", selection: $notificationManager.title)
+			InputField("Title", selection: $notificationManager.content.title)
+				.focused($focusedField, equals: \UNMutableNotificationContent.title)
 			
-			if !notificationManager.title.isEmpty {
-				InputField("Subtitle", selection: $notificationManager.subtitle)
+			if !notificationManager.content.title.isEmpty {
+				InputField("Subtitle", selection: $notificationManager.content.subtitle)
+					.focused($focusedField, equals: \UNMutableNotificationContent.subtitle)
 				
-				InputField("Body", selection: $notificationManager.body)
+				InputField("Body", selection: $notificationManager.content.body)
+					.focused($focusedField, equals: \UNMutableNotificationContent.body)
 			}
 		}
 		.padding(8)
 		.background(Color(uiColor: .secondarySystemGroupedBackground))
 		.clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
 	}
+	
+	// IDEA: Repeating preset pomodoro
 	
     var body: some View {
 		NavigationView {
@@ -33,7 +40,7 @@ struct ContentView: View {
 						inputFields
 							.padding(.bottom, 32)
 						
-						if !notificationManager.title.isEmpty {
+						if !notificationManager.content.title.isEmpty {
 							Section {
 								TimeSelection()
 									.padding(.bottom, 32)
@@ -47,16 +54,21 @@ struct ContentView: View {
 							} header: {
 								Header("Remind me in")
 							}
-						} else if let pendingNotifications = notificationManager.pendingNotifications,
+						} else if focusedField == nil,
+								  let pendingNotifications = notificationManager.pendingNotifications,
 								  !pendingNotifications.isEmpty {
 							PendingNotifications(pendingNotifications)
 						}
 						
 					}
 					.padding(.horizontal)
+					.onChange(of: notificationManager.content) { _ in
+						focusedField = nil
+					}
 				}
 				.navigationTitle("Notifications")
-				.animation(.default, value: notificationManager.title.isEmpty)
+				.animation(.default, value: notificationManager.content.title.isEmpty)
+				.animation(.default, value: focusedField)
 				.task {
 					await notificationManager.fetchPendingNotifications()
 				}
