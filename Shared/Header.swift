@@ -1,6 +1,6 @@
 //
 //  Header.swift
-//  TimerNotifications (iOS)
+//  TimerNotifications
 //
 //  Created by Gregor Hermanowski on 30. March 2022.
 //

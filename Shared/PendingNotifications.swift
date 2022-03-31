@@ -1,6 +1,6 @@
 //
 //  PendingNotifications.swift
-//  TimerNotifications (iOS)
+//  TimerNotifications
 //
 //  Created by Gregor Hermanowski on 31. March 2022.
 //
