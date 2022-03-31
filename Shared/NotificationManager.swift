@@ -37,11 +37,26 @@ import SwiftUI
 		hasRequestedPermission = true
 	}
 	
-	func sendNotification(in timeInterval: TimeInterval) {
+	func sendNotification(in timeInterval: TimeInterval) async {
 		let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
-		let content = createNotification()
+		await scheduleNotification(content: createNotification(), trigger: trigger)
+	}
+	
+	func sendNotification(at date: Date) async {
+		let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
+		let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+		await scheduleNotification(content: createNotification(), trigger: trigger)
+	}
+	
+	private func scheduleNotification(content: UNMutableNotificationContent,
+									  trigger: UNNotificationTrigger) async {
 		let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-		notificationCentre.add(request)
+		
+		do {
+			try await notificationCentre.add(request)
+		} catch {
+			print(error)
+		}
 	}
 	
 	private func createNotification() -> UNMutableNotificationContent {

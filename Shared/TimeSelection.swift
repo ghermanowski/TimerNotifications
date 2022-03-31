@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct TimeSelection: View {
+	@EnvironmentObject private var notificationManager: NotificationManager
+	
 	@State private var date = Date.now
 	
     var body: some View {
 		DatePicker(selection: $date, displayedComponents: .hourAndMinute) {
 			Button("Set Reminder") {
-				
+				Task {
+					await notificationManager.sendNotification(at: date)
+				}
 			}
 			.buttonStyle(.compact)
 		}

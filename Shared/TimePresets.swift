@@ -17,7 +17,9 @@ struct TimePresets: View {
 			ForEach(intervals, id: \.self) { interval in
 				if let abbreviatedInterval = interval.abbreviated {
 					Button(abbreviatedInterval) {
-						notificationManager.sendNotification(in: interval)
+						Task {
+							await notificationManager.sendNotification(in: interval)
+						}
 					}
 					.buttonStyle(.big)
 				}
