@@ -12,6 +12,8 @@ struct NotificationItem: View {
 		self.notification = notification
 	}
 	
+	@EnvironmentObject private var notificationManager: NotificationManager
+	
 	private let notification: UNNotificationRequest
 	
     var body: some View {
@@ -49,6 +51,15 @@ struct NotificationItem: View {
 				}
 			}
 			.padding()
+		}
+		.contextMenu {
+			Button(role: .destructive) {
+				Task {
+					await notificationManager.remove(notification)
+				}
+			} label: {
+				Label("Remove Notification", systemImage: "xmark.circle")
+			}
 		}
     }
 }

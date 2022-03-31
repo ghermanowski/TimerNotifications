@@ -78,4 +78,9 @@ import SwiftUI
 	func fetchPendingNotifications() async {
 		pendingNotifications = await notificationCentre.pendingNotificationRequests()
 	}
+	
+	func remove(_ notification: UNNotificationRequest) async {
+		notificationCentre.removePendingNotificationRequests(withIdentifiers: [notification.identifier])
+		await fetchPendingNotifications()
+	}
 }
