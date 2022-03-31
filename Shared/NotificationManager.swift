@@ -76,7 +76,6 @@ import SwiftUI
 	}
 	
 	func fetchPendingNotifications() async {
-		let notificationCenter = UNUserNotificationCenter.current()
-		pendingNotifications = await notificationCenter.pendingNotificationRequests()
+		pendingNotifications = await notificationCentre.pendingNotificationRequests()
 	}
 }
