@@ -17,7 +17,11 @@ struct ContentView: View {
 			InputField("Title", selection: $notificationManager.content.title)
 				.focused($focusedField, equals: \UNMutableNotificationContent.title)
 			
-			if !notificationManager.content.title.isEmpty {
+			if !notificationManager.content.title.isEmpty ||
+				!notificationManager.content.subtitle.isEmpty ||
+				!notificationManager.content.body.isEmpty ||
+				focusedField == \UNMutableNotificationContent.subtitle ||
+				focusedField == \UNMutableNotificationContent.body {
 				InputField("Subtitle", selection: $notificationManager.content.subtitle)
 					.focused($focusedField, equals: \UNMutableNotificationContent.subtitle)
 				
