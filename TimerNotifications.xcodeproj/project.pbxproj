@@ -20,6 +20,7 @@
 		F54F87DA27F46E7A00BAA13B /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D927F46E7A00BAA13B /* InputField.swift */; };
 		F5B6E4DE27F5DE7900D624BE /* PendingNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6E4DD27F5DE7800D624BE /* PendingNotifications.swift */; };
 		F5B6E4E027F5F1EF00D624BE /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6E4DF27F5F1EF00D624BE /* NotificationItem.swift */; };
+		F5B6E4E227F634E900D624BE /* UNNotificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6E4E127F634E900D624BE /* UNNotificationRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F54F87D927F46E7A00BAA13B /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		F5B6E4DD27F5DE7800D624BE /* PendingNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingNotifications.swift; sourceTree = "<group>"; };
 		F5B6E4DF27F5F1EF00D624BE /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
+		F5B6E4E127F634E900D624BE /* UNNotificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNNotificationRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				F5B6E4DF27F5F1EF00D624BE /* NotificationItem.swift */,
 				F54F87C927F456E500BAA13B /* TimeSelection.swift */,
 				F54F87C727F456E500BAA13B /* TimeInterval.swift */,
+				F5B6E4E127F634E900D624BE /* UNNotificationRequest.swift */,
 				F54F87D627F461BA00BAA13B /* NotificationManager.swift */,
 				F54F87C427F456E500BAA13B /* Assets.xcassets */,
 			);
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F54F87D527F45D3200BAA13B /* Header.swift in Sources */,
+				F5B6E4E227F634E900D624BE /* UNNotificationRequest.swift in Sources */,
 				F54F87CC27F456E500BAA13B /* ContentView.swift in Sources */,
 				F54F87D127F45B2D00BAA13B /* CompactStyle.swift in Sources */,
 				F54F87DA27F46E7A00BAA13B /* InputField.swift in Sources */,
