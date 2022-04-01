@@ -40,12 +40,10 @@ struct NotificationItem: View {
 		}
 		.overlay(alignment: .topTrailing) {
 			Group {
-				if let timeTrigger = notification.trigger as? UNCalendarNotificationTrigger,
-				   let date = timeTrigger.nextTriggerDate() {
-					Text("at \(date, style: .time)")
-				} else if let intervalTrigger = notification.trigger as? UNTimeIntervalNotificationTrigger,
-						  let date = intervalTrigger.nextTriggerDate() {
-					Text("in \(date, style: .timer)")
+				if let calendarTriggerDate = notification.calendarTriggerDate {
+					Text("at \(calendarTriggerDate, style: .time)")
+				} else if let intervalTriggerDate = notification.intervalTriggerDate {
+					Text("in \(intervalTriggerDate, style: .timer)")
 				}
 			}
 			.foregroundStyle(.tint)

@@ -16,7 +16,14 @@ extension UNNotificationRequest: Comparable {
 	}
 	
 	var triggerDate: Date? {
-		(trigger as? UNCalendarNotificationTrigger)?.nextTriggerDate() ??
+		calendarTriggerDate ?? intervalTriggerDate
+	}
+	
+	var calendarTriggerDate: Date? {
+		(trigger as? UNCalendarNotificationTrigger)?.nextTriggerDate()
+	}
+	
+	var intervalTriggerDate: Date? {
 		(trigger as? UNTimeIntervalNotificationTrigger)?.nextTriggerDate()
 	}
 }
