@@ -23,19 +23,15 @@ Next create a new file with a class to manage the notifications — Notification
 
 Inside the class add a constant called notificationCenter which you set to `UNUserNotificationCenter.current()`. `UNUserNotificationCenter` provides you tools to manage your apps notifications. Using the method `current()`, you get the notification center for your app.
 
-With the following code you can request permission from the user. We ask for permission to display alerts with sound and to set badges for our app on the home screen.
+With the following statement you can request permission from the user. We ask for permission to display alerts with sound and to set badges for our app on the home screen.
 
 ```swift
-do {
-	try await notificationCenter.requestAuthorization(options: [.alert, .badge, .sound])
-} catch {
-	print(error)
-}
+try? await notificationCenter.requestAuthorization(options: [.alert, .badge, .sound])
 ```
 
 <img width="320" alt="Permission Request Alert" src="https://user-images.githubusercontent.com/57409167/161842442-924a1608-52ba-430c-bfaa-a79f41f80587.png">
 
-To check whether permission has been granted, you can use the following method:
+To check whether permission has been granted, you can use the following lines:
 
 ```swift
 let settings = await notificationCenter.notificationSettings()
@@ -59,12 +55,7 @@ Finally you can schedule the notification like this:
 
 ```swift
 let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-
-do {
-	try await notificationCenter.add(request)
-} catch {
-	print(error)
-}
+try? await notificationCenter.add(request)
 ```
 
 ### Removing Notifications
