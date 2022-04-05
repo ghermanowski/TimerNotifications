@@ -17,11 +17,11 @@ Next create a new file with a class to manage the notifications — Notification
 
 ```
 func requestPermission() async {
-		do {
-			try await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
-		} catch {
-			print(error)
-		}
+	do {
+		try await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
+	} catch {
+		print(error)
+	}
 }
 ```
 
@@ -29,8 +29,8 @@ To check whether permission has been granted, you can use the following method:
 
 ```
 func canSendNotfications() async -> Bool {
-		let settings = await UNUserNotificationCenter.current().notificationSettings()
-		return settings.authorizationStatus == .authorized
+	let settings = await UNUserNotificationCenter.current().notificationSettings()
+	return settings.authorizationStatus == .authorized
 }
 ```
 
@@ -52,13 +52,13 @@ Finally you can schedule the notification like this:
 
 ```
 private func scheduleNotification(identifier: String, content: UNNotificationContent, trigger: UNNotificationTrigger) async {
-		let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+	let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
 		
-		do {
-			try await UNUserNotificationCenter.current().add(request)
-		} catch {
-			print(error)
-		}
+	do {
+		try await UNUserNotificationCenter.current().add(request)
+	} catch {
+		print(error)
+	}
 }
 ```
 
