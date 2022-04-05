@@ -1,13 +1,11 @@
 # TimerNotifications (iOS)
 
-Use TimerNotifications to remind yourself using notifications. After choosing a title you can select a duration after which you want to be notified or a specify a time. The notifications are scheduled using the async/await API.
+Use TimerNotifications to remind yourself using notifications. After choosing a title you can select a duration after which you want to be notified or you can specify a time. The notifications are scheduled using the async/await API.
 
 Created at Apple Developer Academy Napoli
 
 
 ## Tutorial: How to Use Local Notifications
-
-We will be using the async/await API throughout these steps.
 
 ###### Setup
 
