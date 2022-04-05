@@ -7,6 +7,8 @@ Created at Apple Developer Academy Napoli
 
 ## Tutorial: How to Use Local Notifications
 
+We will be using the async/await API throughout these steps.
+
 ###### Setup
 
 After creating a new Xcode project, go to the build file and select info for the target. Add a new property called NSUserNotificationsUsageDescription in which you describe what your app needs to use notifications for.
