@@ -15,6 +15,8 @@ We will be using the async/await API throughout these steps. Some familiarity wi
 
 After creating a new Xcode project, go to the build file and select info for the target. Add a new property called `NSUserNotificationsUsageDescription` in which you describe what your app needs to use notifications for. The system needs this property to ask the user for permission.
 
+<img width="1280" alt="Setting NSUserNotificationsUsageDescription" src="https://user-images.githubusercontent.com/57409167/161842258-2f5a2957-7232-4ed0-a322-818e5891a377.png">
+
 ### Requesting Permission
 
 Next create a new file with a class to manage the notifications — NotificationManager would be a fitting name. 
@@ -30,6 +32,8 @@ do {
 	print(error)
 }
 ```
+
+<img width="320" alt="Permission Request Alert" src="https://user-images.githubusercontent.com/57409167/161842442-924a1608-52ba-430c-bfaa-a79f41f80587.png">
 
 To check whether permission has been granted, you can use the following method:
 
