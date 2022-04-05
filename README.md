@@ -7,72 +7,70 @@ Created at Apple Developer Academy Napoli
 
 ## Tutorial: How to Use Local Notifications
 
-###### Setup
+In this tutorial you will learn how to send notifications in your app.
 
-After creating a new Xcode project, go to the build file and select info for the target. Add a new property called NSUserNotificationsUsageDescription in which you describe what your app needs to use notifications for.
+We will be using the async/await API throughout these steps. Some familiarity with it will be very helpful for you.
 
-###### Requesting Permission
+### Setup
 
-Next create a new file with a class to manage the notifications — NotificationManager would be a fitting name. Add the following method to the class:
+After creating a new Xcode project, go to the build file and select info for the target. Add a new property called `NSUserNotificationsUsageDescription` in which you describe what your app needs to use notifications for. The system needs this property to ask the user for permission.
 
-```
-func requestPermission() async {
-	do {
-		try await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
-	} catch {
-		print(error)
-	}
+### Requesting Permission
+
+Next create a new file with a class to manage the notifications — NotificationManager would be a fitting name. 
+
+Inside the class add a constant called notificationCenter which you set to `UNUserNotificationCenter.current()`. `UNUserNotificationCenter` provides you tools to manage your apps notifications. Using the method `current()`, you get the notification center for your app.
+
+With the following code you can request permission from the user. We ask for permission to display alerts with sound and to set badges for our app on the home screen.
+
+```swift
+do {
+	try await notificationCenter.requestAuthorization(options: [.alert, .badge, .sound])
+} catch {
+	print(error)
 }
 ```
 
 To check whether permission has been granted, you can use the following method:
 
-```
-func canSendNotfications() async -> Bool {
-	let settings = await UNUserNotificationCenter.current().notificationSettings()
-	return settings.authorizationStatus == .authorized
-}
+```swift
+let settings = await notificationCenter.notificationSettings()
+let canSendNotifications = settings.authorizationStatus == .authorized
 ```
 
+### Scheduling Notifications
 
-###### Scheduling Notifications
+To schedule a notification, you need three parts to make up the `UNNotificationRequest` you will add to your `UNUserNotificationCenter`.
 
-To schedule a notification, you need three parts to make up the ```UNNotificationRequest``` you will add to your ```UNUserNotificationCenter```.
+1. An identifier. Ideally you can use one from your model, otherwise you can just use `UUID().uuidString` to create a new one.
+2. The content of the notification (`UNNotificationContent`) needs to have a title that is not empty, otherwise the notification does not appear. You can also add more information in the body parameter, or add a sound or attachments to present in the notification. In TimerNotifications, I included title, subtitle and body.
+3. A trigger, to determine when your notification is sent. There a few different types including:
+    - `UNTimeIntervalNotificationTrigger`: Send a notification after a specified amount of seconds.
+    - `UNCalendarNotificationTrigger`: Send a notification at a certain date using the type `DateComponents`.
+    - `UNLocationNotificationTrigger` and `UNPushNotificationTrigger` will not be covered here.
 
-1. An identifier. Ideally you can use one from your model, otherwise you can just use ```UUID().uuidString``` to create a new one.
-2. The content of the notification (```UNMutableNotificationContent```) needs to have a title that is not empty, otherwise the notification does not appear. You can also add more information in the body or add a sound or attachements to present in the notification. In TimerNotifications, I included title, subtitle and body.
-3. A trigger, to determine when your notification is sent. There a few different types including: 
-   - ```UNTimeIntervalNotificationTrigger```: Send a notification after a specified amount of seconds.
-   - ```UNCalendarNotificationTrigger```: Send a notification at a certain date (```DateComponents```).
-   - ```UNLocationNotificationTrigger``` and ```UNPushNotificationTrigger``` will not be covered here.
-
-To see out how I created the triggers, take a look at ```NotificationManager.sendNotification(in:)``` and ```NotificationManager.sendNotification(at:)```.
+To see how I created the triggers, take a look at `NotificationManager.sendNotification(in:)` and `NotificationManager.sendNotification(at:)`.
 
 Finally you can schedule the notification like this:
 
-```
-private func scheduleNotification(identifier: String, content: UNNotificationContent, trigger: UNNotificationTrigger) async {
-	let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-		
-	do {
-		try await UNUserNotificationCenter.current().add(request)
-	} catch {
-		print(error)
-	}
+```swift
+let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+
+do {
+	try await notificationCenter.add(request)
+} catch {
+	print(error)
 }
 ```
 
-###### Removing Notifications
+### Removing Notifications
 
-If a scheduled notification should not be sent, you can remove it like this:
+If a scheduled notification should not be sent, you can remove them without the user noticing. Use the instance method of `UNUserNotificationCenter` called `removePendingNotificationRequests(withIdentifiers:)`.
 
-```
-let identifiers = [String]()  // Replace with the ID(s)
-UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
-```
+### Conclusion
 
-You can get all previously scheduled notifications using the async instance method of ```UNUserNotificationCenter``` called ```pendingNotificationRequests()```.
+Now you know the basics of scheduling notifications locally. Take a look at the official documentation to find out more, like how to attach attachments or actions to notifications.
 
-###### Finished
+## Final Result
 
-Now you know the basics of scheduling notifications. Take a look at the official documentation to find out more.
+You can see how I used notifications in the project files. The notification content is created differently than in the tutorial, but the same principles apply.
