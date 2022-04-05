@@ -5,6 +5,7 @@
 //  Created by Gregor Hermanowski on 30. March 2022.
 //
 
+import Foundation
 import SwiftUI
 
 struct TimePresets: View {

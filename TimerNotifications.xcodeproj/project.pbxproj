@@ -20,7 +20,7 @@
 		F54F87DA27F46E7A00BAA13B /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D927F46E7A00BAA13B /* InputField.swift */; };
 		F5B6E4DE27F5DE7900D624BE /* PendingNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6E4DD27F5DE7800D624BE /* PendingNotifications.swift */; };
 		F5B6E4E027F5F1EF00D624BE /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6E4DF27F5F1EF00D624BE /* NotificationItem.swift */; };
-		F5B6E4E227F634E900D624BE /* UNNotificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6E4E127F634E900D624BE /* UNNotificationRequest.swift */; };
+		F5B6E4E227F634E900D624BE /* UNNotificationRequest+Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6E4E127F634E900D624BE /* UNNotificationRequest+Sorting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +35,13 @@
 		F54F87D227F45C3E00BAA13B /* TimePresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePresets.swift; sourceTree = "<group>"; };
 		F54F87D427F45D3200BAA13B /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		F54F87D627F461BA00BAA13B /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		F54F87D827F4657800BAA13B /* TimerNotifications--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TimerNotifications--iOS--Info.plist"; sourceTree = "<group>"; };
+		F54F87D827F4657800BAA13B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F54F87D927F46E7A00BAA13B /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		F5B6E4DD27F5DE7800D624BE /* PendingNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingNotifications.swift; sourceTree = "<group>"; };
 		F5B6E4DF27F5F1EF00D624BE /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
-		F5B6E4E127F634E900D624BE /* UNNotificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNNotificationRequest.swift; sourceTree = "<group>"; };
+		F5B6E4E127F634E900D624BE /* UNNotificationRequest+Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UNNotificationRequest+Sorting.swift"; sourceTree = "<group>"; };
+		F5B6E4E427FCBCA500D624BE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F5B6E4E527FCBCB800D624BE /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +58,10 @@
 		F54F878627F44BC000BAA13B = {
 			isa = PBXGroup;
 			children = (
+				F5B6E4E427FCBCA500D624BE /* README.md */,
 				F54F87C327F456AE00BAA13B /* Shared */,
-				F54F87D827F4657800BAA13B /* TimerNotifications--iOS--Info.plist */,
+				F58FF52527FCB80700EB6CB2 /* iOS */,
+				F5B6E4E527FCBCB800D624BE /* LICENSE */,
 				F54F879427F44BC100BAA13B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,21 +78,77 @@
 			isa = PBXGroup;
 			children = (
 				F54F87C827F456E500BAA13B /* TimerNotificationsApp.swift */,
-				F54F87C627F456E500BAA13B /* ContentView.swift */,
-				F54F87D227F45C3E00BAA13B /* TimePresets.swift */,
-				F54F87D927F46E7A00BAA13B /* InputField.swift */,
-				F54F87D427F45D3200BAA13B /* Header.swift */,
-				F54F87C527F456E500BAA13B /* BigStyle.swift */,
-				F54F87D027F45B2D00BAA13B /* CompactStyle.swift */,
-				F5B6E4DD27F5DE7800D624BE /* PendingNotifications.swift */,
-				F5B6E4DF27F5F1EF00D624BE /* NotificationItem.swift */,
-				F54F87C927F456E500BAA13B /* TimeSelection.swift */,
-				F54F87C727F456E500BAA13B /* TimeInterval.swift */,
-				F5B6E4E127F634E900D624BE /* UNNotificationRequest.swift */,
-				F54F87D627F461BA00BAA13B /* NotificationManager.swift */,
+				F58FF52327FCAC9E00EB6CB2 /* Views */,
+				F58FF52127FCAC5200EB6CB2 /* Extensions */,
+				F58FF52427FCACD000EB6CB2 /* Model */,
 				F54F87C427F456E500BAA13B /* Assets.xcassets */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		F58FF52027FCAC2700EB6CB2 /* ButtonStyles */ = {
+			isa = PBXGroup;
+			children = (
+				F54F87C527F456E500BAA13B /* BigStyle.swift */,
+				F54F87D027F45B2D00BAA13B /* CompactStyle.swift */,
+			);
+			path = ButtonStyles;
+			sourceTree = "<group>";
+		};
+		F58FF52127FCAC5200EB6CB2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F54F87C727F456E500BAA13B /* TimeInterval.swift */,
+				F5B6E4E127F634E900D624BE /* UNNotificationRequest+Sorting.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F58FF52227FCAC8A00EB6CB2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F54F87D427F45D3200BAA13B /* Header.swift */,
+				F54F87D927F46E7A00BAA13B /* InputField.swift */,
+				F5B6E4DF27F5F1EF00D624BE /* NotificationItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F58FF52327FCAC9E00EB6CB2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F58FF52027FCAC2700EB6CB2 /* ButtonStyles */,
+				F58FF52227FCAC8A00EB6CB2 /* Components */,
+				F54F87C627F456E500BAA13B /* ContentView.swift */,
+				F5B6E4E327FCBC1F00D624BE /* ContentViewComponents */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F58FF52427FCACD000EB6CB2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F54F87D627F461BA00BAA13B /* NotificationManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F58FF52527FCB80700EB6CB2 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F54F87D827F4657800BAA13B /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		F5B6E4E327FCBC1F00D624BE /* ContentViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F5B6E4DD27F5DE7800D624BE /* PendingNotifications.swift */,
+				F54F87D227F45C3E00BAA13B /* TimePresets.swift */,
+				F54F87C927F456E500BAA13B /* TimeSelection.swift */,
+			);
+			path = ContentViewComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F54F87D527F45D3200BAA13B /* Header.swift in Sources */,
-				F5B6E4E227F634E900D624BE /* UNNotificationRequest.swift in Sources */,
+				F5B6E4E227F634E900D624BE /* UNNotificationRequest+Sorting.swift in Sources */,
 				F54F87CC27F456E500BAA13B /* ContentView.swift in Sources */,
 				F54F87D127F45B2D00BAA13B /* CompactStyle.swift in Sources */,
 				F54F87DA27F46E7A00BAA13B /* InputField.swift in Sources */,
@@ -230,6 +290,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -282,6 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -300,10 +362,11 @@
 				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TimerNotifications--iOS--Info.plist";
+				INFOPLIST_FILE = iOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -332,10 +395,11 @@
 				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TimerNotifications--iOS--Info.plist";
+				INFOPLIST_FILE = iOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (

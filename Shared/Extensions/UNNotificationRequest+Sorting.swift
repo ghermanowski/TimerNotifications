@@ -1,5 +1,5 @@
 //
-//  UNNotificationRequest.swift
+//  UNNotificationRequest+Sorting.swift
 //  TimerNotifications
 //
 //  Created by Gregor Hermanowski on 31. March 2022.
@@ -8,13 +8,7 @@
 import Foundation
 import UserNotifications
 
-extension UNNotificationRequest: Comparable {
-	public static func < (left: UNNotificationRequest, right: UNNotificationRequest) -> Bool {
-		guard let leftDate = left.triggerDate else { return right.triggerDate != nil }
-		guard let rightDate = right.triggerDate else { return true }
-		return leftDate < rightDate
-	}
-	
+extension UNNotificationRequest {
 	var triggerDate: Date? {
 		calendarTriggerDate ?? intervalTriggerDate
 	}
@@ -25,5 +19,13 @@ extension UNNotificationRequest: Comparable {
 	
 	var intervalTriggerDate: Date? {
 		(trigger as? UNTimeIntervalNotificationTrigger)?.nextTriggerDate()
+	}
+}
+
+extension UNNotificationRequest: Comparable {
+	public static func < (left: UNNotificationRequest, right: UNNotificationRequest) -> Bool {
+		guard let leftDate = left.triggerDate else { return right.triggerDate != nil }
+		guard let rightDate = right.triggerDate else { return true }
+		return leftDate < rightDate
 	}
 }
