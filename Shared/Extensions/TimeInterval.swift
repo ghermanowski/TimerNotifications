@@ -14,6 +14,7 @@ extension TimeInterval {
 		return formatter
 	}()
 	
+	/// Formats the duration to a readable, abbreviated format.
 	var abbreviated: String? {
 		Self.abbreviatedFormatter.string(from: self)
 	}
