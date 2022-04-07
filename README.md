@@ -10,6 +10,10 @@ Use TimerNotifications to remind yourself using notifications. After choosing a 
 
 Created at Apple Developer Academy Napoli
 
+### Technologies
+
+SwiftUI, User Notifications
+
 
 ## Tutorial: How to Use Local Notifications
 
