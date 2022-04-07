@@ -16,26 +16,24 @@ struct ContentView: View {
 	var inputFields: some View {
 		VStack {
 			InputField("Title", selection: $notificationManager.content.title)
-				.focused($focusedField, equals: \UNMutableNotificationContent.title)
+				.focused($focusedField, equals: \UNNotificationContent.title)
 			
 			if !notificationManager.content.title.isEmpty ||
 				!notificationManager.content.subtitle.isEmpty ||
 				!notificationManager.content.body.isEmpty ||
-				focusedField == \UNMutableNotificationContent.subtitle ||
-				focusedField == \UNMutableNotificationContent.body {
+				focusedField == \UNNotificationContent.subtitle ||
+				focusedField == \UNNotificationContent.body {
 				InputField("Subtitle", selection: $notificationManager.content.subtitle)
-					.focused($focusedField, equals: \UNMutableNotificationContent.subtitle)
+					.focused($focusedField, equals: \UNNotificationContent.subtitle)
 				
 				InputField("Body", selection: $notificationManager.content.body)
-					.focused($focusedField, equals: \UNMutableNotificationContent.body)
+					.focused($focusedField, equals: \UNNotificationContent.body)
 			}
 		}
 		.padding(8)
 		.background(Color(uiColor: .secondarySystemGroupedBackground))
 		.clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
 	}
-	
-	// IDEA: Repeating preset pomodoro
 	
     var body: some View {
 		NavigationView {
