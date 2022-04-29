@@ -26,9 +26,18 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 		
 		if categoryIdentifier == NotificationManager.defaultCategoryID {
 			switch actionIdentifier {
+				case NotificationManager.inputActionID:
+					guard let response = response as? UNTextInputNotificationResponse else {
+						print(response)
+						return
+					}
+					
+					print("Input:", response.userText)
+				case NotificationManager.repeatActionID:
+					// TODO: Add Repeat method
+					break
 				case NotificationManager.deleteActionID:
 					await NotificationManager.shared.remove(notificationRequest)
-				case NotificationManager.repeatActionID: break
 				default: break
 			}
 		}

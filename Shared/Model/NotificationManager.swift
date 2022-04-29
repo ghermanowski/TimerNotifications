@@ -12,7 +12,9 @@ import SwiftUI
 /// Handles all communication with the system notification centre.
 @MainActor final class NotificationManager: ObservableObject {
 	static let defaultCategoryID = "DEFAULT_CATEGORY"
+	
 	static let deleteActionID = "DELETE_ACTION"
+	static let inputActionID = "INPUT_ACTION"
 	static let repeatActionID = "REPEAT_ACTION"
 
 	static let shared = NotificationManager()
@@ -26,12 +28,30 @@ import SwiftUI
 	}
 	
 	static func setNotificationCategory() {
-		let deleteAction = UNNotificationAction(identifier: deleteActionID, title: "Delete")
-		let repeatAction = UNNotificationAction(identifier: repeatActionID, title: "Repeat")
+		let inputAction = UNTextInputNotificationAction(
+			identifier: inputActionID,
+			title: "Input text",
+			icon: .init(systemImageName: "pencil"),
+			textInputButtonTitle: "Done",
+			textInputPlaceholder: "Write something"
+		)
+		
+		let repeatAction = UNNotificationAction(
+			identifier: repeatActionID,
+			title: "Repeat",
+			icon: .init(systemImageName: "repeat")
+		)
+		
+		let deleteAction = UNNotificationAction(
+			identifier: deleteActionID,
+			title: "Delete",
+			options: .destructive,
+			icon: .init(systemImageName: "trash")
+		)
 		
 		let defaultCategory = UNNotificationCategory(
 			identifier: defaultCategoryID,
-			actions: [deleteAction, repeatAction],
+			actions: [inputAction, repeatAction, deleteAction],
 			intentIdentifiers: [],
 			hiddenPreviewsBodyPlaceholder: "Unlock to see.",
 			options: .customDismissAction
