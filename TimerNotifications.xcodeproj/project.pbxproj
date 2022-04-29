@@ -18,6 +18,7 @@
 		F54F87D527F45D3200BAA13B /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D427F45D3200BAA13B /* Header.swift */; };
 		F54F87D727F461BA00BAA13B /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D627F461BA00BAA13B /* NotificationManager.swift */; };
 		F54F87DA27F46E7A00BAA13B /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F87D927F46E7A00BAA13B /* InputField.swift */; };
+		F577CEA7281BCE17002CE4E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577CEA6281BCE17002CE4E8 /* AppDelegate.swift */; };
 		F5B6E4DE27F5DE7900D624BE /* PendingNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6E4DD27F5DE7800D624BE /* PendingNotifications.swift */; };
 		F5B6E4E027F5F1EF00D624BE /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6E4DF27F5F1EF00D624BE /* NotificationItem.swift */; };
 		F5B6E4E227F634E900D624BE /* UNNotificationRequest+Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6E4E127F634E900D624BE /* UNNotificationRequest+Sorting.swift */; };
@@ -37,6 +38,7 @@
 		F54F87D627F461BA00BAA13B /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		F54F87D827F4657800BAA13B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F54F87D927F46E7A00BAA13B /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		F577CEA6281BCE17002CE4E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5B6E4DD27F5DE7800D624BE /* PendingNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingNotifications.swift; sourceTree = "<group>"; };
 		F5B6E4DF27F5F1EF00D624BE /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
 		F5B6E4E127F634E900D624BE /* UNNotificationRequest+Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UNNotificationRequest+Sorting.swift"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				F54F87C827F456E500BAA13B /* TimerNotificationsApp.swift */,
+				F577CEA6281BCE17002CE4E8 /* AppDelegate.swift */,
 				F58FF52327FCAC9E00EB6CB2 /* Views */,
 				F58FF52127FCAC5200EB6CB2 /* Extensions */,
 				F58FF52427FCACD000EB6CB2 /* Model */,
@@ -225,6 +228,7 @@
 				F5B6E4E227F634E900D624BE /* UNNotificationRequest+Sorting.swift in Sources */,
 				F54F87CC27F456E500BAA13B /* ContentView.swift in Sources */,
 				F54F87D127F45B2D00BAA13B /* CompactStyle.swift in Sources */,
+				F577CEA7281BCE17002CE4E8 /* AppDelegate.swift in Sources */,
 				F54F87DA27F46E7A00BAA13B /* InputField.swift in Sources */,
 				F54F87D727F461BA00BAA13B /* NotificationManager.swift in Sources */,
 				F54F87CF27F456E500BAA13B /* TimeSelection.swift in Sources */,

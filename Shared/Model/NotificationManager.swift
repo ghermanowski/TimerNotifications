@@ -11,21 +11,41 @@ import SwiftUI
 
 /// Handles all communication with the system notification centre.
 @MainActor final class NotificationManager: ObservableObject {
+	static let defaultCategoryID = "DEFAULT_CATEGORY"
+	static let deleteActionID = "DELETE_ACTION"
+	static let repeatActionID = "REPEAT_ACTION"
+
 	static let shared = NotificationManager()
-	
 	
 	/// Return new notification content preconfigured with sound.
 	static func createContent() -> UNMutableNotificationContent {
 		let content = UNMutableNotificationContent()
 		content.sound = .default
+		content.categoryIdentifier = defaultCategoryID
 		return content
+	}
+	
+	static func setNotificationCategory() {
+		let deleteAction = UNNotificationAction(identifier: deleteActionID, title: "Delete")
+		let repeatAction = UNNotificationAction(identifier: repeatActionID, title: "Repeat")
+		
+		let defaultCategory = UNNotificationCategory(
+			identifier: defaultCategoryID,
+			actions: [deleteAction, repeatAction],
+			intentIdentifiers: [],
+			hiddenPreviewsBodyPlaceholder: "Unlock to see.",
+			options: .customDismissAction
+		)
+		
+		UNUserNotificationCenter.current().setNotificationCategories([defaultCategory])
 	}
 	
 	private init() {
 		content = Self.createContent()
+		Self.setNotificationCategory()
 	}
 	
-	private let notificationCentre = UNUserNotificationCenter.current()
+	let notificationCentre = UNUserNotificationCenter.current()
 	
 	@AppStorage("hasRequestedPermission") private(set) var hasRequestedPermission = false
 	
@@ -51,7 +71,6 @@ import SwiftUI
 		hasRequestedPermission = true
 	}
 	
-	
 	/// Schedules a request to send a notification after the selected interval.
 	/// - Parameter timeInterval: Interval until the notification is triggered.
 	func sendNotification(in timeInterval: TimeInterval) async {
@@ -66,7 +85,6 @@ import SwiftUI
 		let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
 		await scheduleNotification(trigger: trigger)
 	}
-	
 	
 	/// Uses the instance variable content to add a notification request.
 	private func scheduleNotification(trigger: UNNotificationTrigger) async {
