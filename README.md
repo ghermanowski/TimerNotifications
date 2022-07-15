@@ -3,17 +3,12 @@
 Use TimerNotifications to remind yourself using notifications. After choosing a title you can select a duration after which you want to be notified or you can specify a time. The notifications are scheduled using the async/await API.
 
 <div>
-  <img width="30%" alt="Creating a new notification" src="https://user-images.githubusercontent.com/57409167/162177452-fa9139ad-5d58-4d91-824d-ccabbae4b37d.png">
-  <img width="30%" alt="Scheduled notifications in ContentView" src="https://user-images.githubusercontent.com/57409167/162177469-90a5a799-a3d4-4fa4-a5bb-7fcd548885d0.png">
-    <img width="30%" alt="Notification history" src="https://user-images.githubusercontent.com/57409167/162177505-a2f6d897-ae98-4c61-ba9a-e8e9622f5964.png">
+  <img width="32%" alt="Creating a new notification" src="https://user-images.githubusercontent.com/57409167/162177452-fa9139ad-5d58-4d91-824d-ccabbae4b37d.png">
+  <img width="32%" alt="Scheduled notifications in ContentView" src="https://user-images.githubusercontent.com/57409167/162177469-90a5a799-a3d4-4fa4-a5bb-7fcd548885d0.png">
+  <img width="32%" alt="Notification history" src="https://user-images.githubusercontent.com/57409167/162177505-a2f6d897-ae98-4c61-ba9a-e8e9622f5964.png">
 </div>
 
 Created at Apple Developer Academy Napoli
-
-### Technologies
-
-SwiftUI, User Notifications
-
 
 ## Tutorial: How to Use Local Notifications
 
@@ -25,7 +20,7 @@ We will be using the async/await API throughout these steps. Some familiarity wi
 
 After creating a new Xcode project, go to the build file and select info for the target. Add a new property called `NSUserNotificationsUsageDescription` in which you describe what your app needs to use notifications for. The system needs this property to ask the user for permission.
 
-<img width="95%" alt="Setting NSUserNotificationsUsageDescription" src="https://user-images.githubusercontent.com/57409167/161842258-2f5a2957-7232-4ed0-a322-818e5891a377.png">
+<img width="96%" alt="Setting NSUserNotificationsUsageDescription" src="https://user-images.githubusercontent.com/57409167/161842258-2f5a2957-7232-4ed0-a322-818e5891a377.png">
 
 ### Requesting Permission
 
@@ -39,7 +34,7 @@ With the following statement you can request permission from the user. We ask fo
 try? await notificationCenter.requestAuthorization(options: [.alert, .badge, .sound])
 ```
 
-<img width="30%" alt="Permission Request Alert" src="https://user-images.githubusercontent.com/57409167/161842442-924a1608-52ba-430c-bfaa-a79f41f80587.png">
+<img width="32%" alt="Permission Request Alert" src="https://user-images.githubusercontent.com/57409167/161842442-924a1608-52ba-430c-bfaa-a79f41f80587.png">
 
 To check whether permission has been granted, you can use the following lines:
 
