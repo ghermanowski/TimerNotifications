@@ -2,15 +2,15 @@
 
 Use TimerNotifications to remind yourself using notifications. After choosing a title you can select a duration after which you want to be notified or you can specify a time. The notifications are scheduled using the async/await API.
 
+## Screenshots
+
 <div>
   <img width="32%" alt="Creating a new notification" src="https://user-images.githubusercontent.com/57409167/162177452-fa9139ad-5d58-4d91-824d-ccabbae4b37d.png">
   <img width="32%" alt="Scheduled notifications in ContentView" src="https://user-images.githubusercontent.com/57409167/162177469-90a5a799-a3d4-4fa4-a5bb-7fcd548885d0.png">
   <img width="32%" alt="Notification history" src="https://user-images.githubusercontent.com/57409167/162177505-a2f6d897-ae98-4c61-ba9a-e8e9622f5964.png">
 </div>
 
-Created at Apple Developer Academy Napoli
-
-## Tutorial: How to Use Local Notifications
+# Tutorial: How to Use Local Notifications
 
 In this tutorial you will learn how to send notifications in your app.
 
